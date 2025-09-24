@@ -9,6 +9,9 @@ const Footer: React.FC = () => {
                 <p className="mt-2 text-sm">
                     This site does not store any files on its server. All contents are provided by non-affiliated third parties.
                 </p>
+                <p className="mt-2 text-sm">
+                    Developer by QuangMinh
+                </p>
             </div>
         </footer>
     );
