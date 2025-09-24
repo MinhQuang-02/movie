@@ -1,10 +1,9 @@
-
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getMovieDetails } from '../services/api';
 import type { IMovieDetailResponse } from '../types';
 import { IMG_DOMAIN } from '../services/api';
-import Spinner from '../components/Spinner';
+import { DetailPageSkeleton } from '../components/Skeletons';
 
 const DetailPage: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
@@ -32,7 +31,7 @@ const DetailPage: React.FC = () => {
         window.scrollTo(0, 0);
     }, [slug]);
 
-    if (loading) return <Spinner />;
+    if (loading) return <DetailPageSkeleton />;
     if (error) return <div className="text-center text-red-500 py-10">{error}</div>;
     if (!data) return null;
 
@@ -42,8 +41,8 @@ const DetailPage: React.FC = () => {
 
     return (
         <div className="text-white">
-            <div className="relative h-[40vh] md:h-[60vh]">
-                <img src={thumbUrl} alt={movie.name} className="w-full h-full object-cover object-top" />
+            <div className="relative h-[40vh] md:h-[60vh] overflow-hidden">
+                <img src={thumbUrl} alt={movie.name} className="w-full h-full object-cover object-top ken-burns" />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-main via-dark-main/70 to-transparent"></div>
             </div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 -mt-20 md:-mt-40 relative z-10">

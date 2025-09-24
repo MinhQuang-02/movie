@@ -3,8 +3,8 @@ import { useParams, useSearchParams } from 'react-router-dom';
 import { searchMovies } from '../services/api';
 import type { IMovieListResponse } from '../types';
 import MovieList from '../components/MovieList';
-import Spinner from '../components/Spinner';
 import Pagination from '../components/Pagination';
+import { MovieListSkeleton } from '../components/Skeletons';
 
 const SearchPage: React.FC = () => {
     const { keyword } = useParams<{ keyword: string }>();
@@ -36,7 +36,13 @@ const SearchPage: React.FC = () => {
         setSearchParams({ page: page.toString() });
     };
 
-    if (loading) return <Spinner />;
+    if (loading) return (
+        <div className="pt-20">
+            <div className="max-w-7xl mx-auto">
+                <MovieListSkeleton count={18} />
+            </div>
+        </div>
+    );
     if (error) return <div className="text-center text-red-500 py-10">{error}</div>;
     if (!data) return null;
 

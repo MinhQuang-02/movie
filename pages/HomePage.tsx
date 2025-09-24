@@ -3,9 +3,21 @@ import { useSearchParams } from 'react-router-dom';
 import { getNewMovies, getMoviesByListType } from '../services/api';
 import type { IMovieListResponse, IMovieItem } from '../types';
 import MovieList from '../components/MovieList';
-import Spinner from '../components/Spinner';
 import Pagination from '../components/Pagination';
 import HeroSlider from '../components/HeroSlider';
+import { MovieListSkeleton, HeroSliderSkeleton } from '../components/Skeletons';
+
+const HomePageSkeleton: React.FC = () => (
+    <>
+        <HeroSliderSkeleton />
+        <div className="max-w-7xl mx-auto">
+            <MovieListSkeleton count={6} />
+            <MovieListSkeleton count={6} />
+            <MovieListSkeleton count={6} />
+            <MovieListSkeleton count={6} />
+        </div>
+    </>
+);
 
 const HomePage: React.FC = () => {
     const [data, setData] = useState<IMovieListResponse | null>(null);
@@ -51,7 +63,7 @@ const HomePage: React.FC = () => {
         setSearchParams({ page: page.toString() });
     };
 
-    if (loading && !data) return <Spinner />;
+    if (loading) return <HomePageSkeleton />;
     if (error) return <div className="text-center text-red-500 py-10">{error}</div>;
     if (!data) return null;
 
