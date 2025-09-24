@@ -2,7 +2,7 @@
 
 Hello! I am Minh Quang and this repo hosts my personal MovieFlix experiment. The goal is to deliver a fast, modern movie browsing experience built with React, Vite, and a clean TypeScript codebase that I can iterate on quickly.
 
-![MovieFlix banner](https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6)
+
 
 ## Highlights
 - Hero slider showcases trending titles with smooth transitions
