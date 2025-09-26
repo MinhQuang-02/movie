@@ -69,10 +69,10 @@ const HomePage: React.FC = () => {
 
     return (
         <div>
-            {currentPage === 1 && <HeroSlider movies={data.items.slice(0, 6)} />}
+            {currentPage === 1 && <HeroSlider movies={data.items.slice(0, 4)} />}
             <div className="max-w-7xl mx-auto">
                 <MovieList 
-                    movies={currentPage === 1 ? data.items.slice(6, 12) : data.items} 
+                    movies={currentPage === 1 ? data.items.slice(4, 12) : data.items} 
                     title="Phim Mới Cập Nhật" 
                 />
 
