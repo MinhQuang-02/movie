@@ -1,4 +1,4 @@
-import type { IMovieDetailResponse, IMovieListResponse, IFilterListItem } from '../types';
+﻿import type { IMovieDetailResponse, IMovieListResponse, IFilterListItem } from '../types';
 
 const API_BASE_URL = "https://phimapi.com";
 export const IMG_DOMAIN = "https://img.phimapi.com";
