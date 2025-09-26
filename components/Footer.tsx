@@ -7,9 +7,6 @@ const Footer: React.FC = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <p>&copy; {new Date().getFullYear()} MovieFlix. All Rights Reserved.</p>
                 <p className="mt-2 text-sm">
-                    This site does not store any files on its server. All contents are provided by non-affiliated third parties.
-                </p>
-                <p className="mt-2 text-sm">
                     Developer by QuangMinh
                 </p>
             </div>

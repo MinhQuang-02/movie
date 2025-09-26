@@ -78,9 +78,30 @@ const HomePage: React.FC = () => {
 
                 {currentPage === 1 && (
                     <>
-                        {seriesMovies.length > 0 && <MovieList movies={seriesMovies} title="Phim Bộ Nổi Bật" />}
-                        {singleMovies.length > 0 && <MovieList movies={singleMovies} title="Phim Lẻ Đề Cử" />}
-                        {cartoons.length > 0 && <MovieList movies={cartoons} title="Hoạt Hình Hay" />}
+                        {seriesMovies.length > 0 && (
+                            <MovieList
+                                movies={seriesMovies}
+                                title="Phim Bộ Nổi Bật"
+                                linkTo="/list/type-list/phim-bo"
+                                linkTitle="Xem toàn bộ phim bộ"
+                            />
+                        )}
+                        {singleMovies.length > 0 && (
+                            <MovieList
+                                movies={singleMovies}
+                                title="Phim Lẻ Đề Cử"
+                                linkTo="/list/type-list/phim-le"
+                                linkTitle="Khám phá toàn bộ phim lẻ đề cử"
+                            />
+                        )}
+                        {cartoons.length > 0 && (
+                            <MovieList
+                                movies={cartoons}
+                                title="Hoạt Hình Hay"
+                                linkTo="/list/type-list/hoat-hinh"
+                                linkTitle="Xem thêm hoạt hình hay"
+                            />
+                        )}
                     </>
                 )}
 
